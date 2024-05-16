@@ -16,10 +16,6 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
     watch,
   } = useForm({
     mode: 'onBlur',
-    defaultValues: {
-      email: '',
-      password: '',
-    },
   })
 
   const redirect = () => {
