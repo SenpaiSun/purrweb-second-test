@@ -1,0 +1,21 @@
+.logo__container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-left: 120px;
+  padding-right: 120px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+
+.logo__image {
+  width: 24px;
+}
+
+.logo__title {
+  color:black;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  margin: 0;
+}
