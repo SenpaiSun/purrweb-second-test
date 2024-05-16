@@ -1,0 +1,19 @@
+.button__main {
+  width: 100%;
+  border-radius: 12px;
+  height: 52px;
+  color: #FFF;
+}
+
+.button__main:hover {
+  cursor: pointer;
+  background-color: #113ACA;
+}
+
+.button__main:focus {
+  outline: 5px solid #F2F3F4
+}
+
+.button__main:disabled {
+  background-color: #E5EBFF;
+}

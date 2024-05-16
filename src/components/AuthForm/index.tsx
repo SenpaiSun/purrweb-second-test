@@ -2,6 +2,7 @@ import React from 'react'
 import { Input } from '../../ui/input'
 import { formProps } from '../../types'
 import './style.css'
+import { Button } from '../../ui/button'
 
 export const AuthForm = ({ formData }: { formData: formProps }) => {
   return (
@@ -13,6 +14,10 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
             {formData.inputs.map((input, index) => (
               <Input key={index} label={input.label} placeholder={input.placeholder} type={input.type} />
             ))}
+          </div>
+          <Button textButton='Продолжить' type='submit'/>
+          <div>
+            <p className='auth__redirect'>{formData.redirect.textRedirect} <a href='#'>{formData.redirect.linkRedirect}</a></p>
           </div>
         </div>
       </form>
