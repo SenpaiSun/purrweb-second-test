@@ -1,0 +1,31 @@
+.logout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-right: 120px;
+}
+
+.logout__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0B1332;
+}
+
+.logout__button {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #466EFA;
+  padding: 6px;
+  padding-right: 24px;
+  background-color: transparent;
+  text-align: center;
+  background-image: url('../../assets/icons/exit.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: max-content;
+  border: none;
+  cursor: pointer;
+}
