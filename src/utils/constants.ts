@@ -65,11 +65,6 @@ export const formInputsRegister = {
       type: 'password',
       validationRules: {
         required: 'Поле "Повтор пароля" обязательно для заполнения',
-        validate: (val: string) => {
-          if (watch('Пароль') != val) {
-            return 'Пароли должны совпадать';
-          }
-        },
       },
     },
   ],
