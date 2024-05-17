@@ -26,9 +26,20 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
     }
   }
 
+
+
   const hasErrors = Object.keys(errors).length > 0
   const firstErrorMessage = Object.values(errors)[0]?.message
-  console.log(errors)
+  const checkButtonState = () => {
+    if(formData.title === 'Регистрация') {
+      return hasErrors || !watch('Электронная почта') || !watch('Пароль') || !watch('Повтор пароля')
+    }
+    if(formData.title === 'Авторизация') {
+      return hasErrors || !watch('Электронная почта') || !watch('Пароль')
+    }
+    return true
+  }
+  console.log(formData)
 
   return (
     <div className='auth__container'>
@@ -50,7 +61,7 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
             </div>
             <div className='auth__error'>{hasErrors && <p className='auth__error-text'>{firstErrorMessage as string}</p>}</div>
           </div>
-          <Button textButton='Продолжить' type='submit' disabled={hasErrors} />
+          <Button textButton='Продолжить' type='submit' disabled={checkButtonState()} />
           <div className='auth__redirect-container'>
             <p className='auth__redirect-text'>{formData.redirect.textRedirect}</p>
             <button type='button' className='auth__redirect-link' onClick={redirect}>
