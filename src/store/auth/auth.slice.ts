@@ -5,6 +5,9 @@ const initialState: Auth = {
   email: '',
   password: '',
   confirmPassword: '',
+  firstName: '',
+  lastName: '',
+  phone: '',
 }
 
 export const authSlice = createSlice({
@@ -20,8 +23,17 @@ export const authSlice = createSlice({
     setConfirmPassword: (state, action) => {
       state.confirmPassword = action.payload
     },
+    setFirstName: (state, action) => {
+      state.firstName = action.payload
+    },
+    setLastName: (state, action) => {
+      state.lastName = action.payload
+    },
+    setPhone: (state, action) => {
+      state.phone = action.payload
+    },
   },
 })
 
-export const { setEmail, setPassword, setConfirmPassword } = authSlice.actions
+export const { setEmail, setPassword, setConfirmPassword, setFirstName, setLastName, setPhone } = authSlice.actions
 export default authSlice.reducer

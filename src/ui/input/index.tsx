@@ -11,8 +11,9 @@ import { useAppSelector } from '../../hooks/redux'
 export const Input = (props: inputProps) => {
   const { label, placeholder, type, register, validationRules, errors, storeItem } = props
   const [stateInput, setStateInput] = useState(false)
-  const {setEmail, setPassword, setConfirmPassword} = useActions()
-  const stateAuth = useAppSelector(state => state.auth)
+  const [showPassword, setShowPassword] = useState(false)
+  const { setEmail, setPassword, setConfirmPassword, setFirstName, setLastName, setPhone } = useActions()
+  const stateAuth = useAppSelector((state) => state.auth)
   const hasErrors = Object.values(errors).some((error: any) => error.ref.name === label)
   console.log(stateAuth)
   useEffect(() => {
@@ -20,16 +21,16 @@ export const Input = (props: inputProps) => {
   }, [hasErrors])
 
   const inputBody = () => {
-    if (type === 'email') {
+    if (type === 'email' && stateAuth.email !== '') {
       return (
         <>
           <img className='input__image' src={stateInput ? errorInput : accessInput} />
         </>
       )
-    } else {
+    } else if (type === 'password') {
       return (
         <>
-          <button type='button' className='input__button' />
+          <button onClick={() => setShowPassword(!showPassword)} type='button' className={showPassword ? 'input__button input__button-open' : 'input__button'} />
           <img className='input__image' src={stateInput ? errorInput : accessInput} />
         </>
       )
@@ -38,14 +39,25 @@ export const Input = (props: inputProps) => {
 
   const detectStoreItem = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    if(storeItem === 'email') {
-      setEmail(value)
-    }
-    if(storeItem === 'password') {
-      setPassword(value)
-    }
-    if(storeItem === 'confirmPassword') {
-      setConfirmPassword(value)
+    switch (storeItem) {
+      case 'email':
+        setEmail(value)
+        break
+      case 'password':
+        setPassword(value)
+        break
+      case 'confirmPassword':
+        setConfirmPassword(value)
+        break
+      case 'firstName':
+        setFirstName(value)
+        break
+      case 'lastName':
+        setLastName(value)
+        break
+      case 'phone':
+        setPhone(value)
+        break
     }
   }
 
@@ -55,7 +67,7 @@ export const Input = (props: inputProps) => {
         {label}
       </label>
       <div className='input__container-input'>
-        <input className='input_main' type={type} value={stateAuth[storeItem]} placeholder={placeholder} id={label} {...register(label, validationRules)} autoComplete={label === 'Пароль' ? 'new-password' : 'off'} onChange={(e) => detectStoreItem(e)}/>
+        <input className='input_main' type={showPassword ? 'text' : type} value={stateAuth[storeItem]} placeholder={placeholder} id={label} {...register(label, validationRules)} autoComplete={label === 'Пароль' ? 'new-password' : 'off'} onChange={(e) => detectStoreItem(e)} />
         {inputBody()}
       </div>
     </div>

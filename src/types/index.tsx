@@ -5,15 +5,15 @@ export interface inputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   storeItem: string
   placeholder: string
   type: string
-  register: UseFormRegister<any>;
-  validationRules: RegisterOptions;
-  errors: any
+  register?: UseFormRegister<any>;
+  validationRules?: RegisterOptions;
+  errors?: any
 }
 
 export interface formProps extends React.FormHTMLAttributes<HTMLFormElement> {
   title: string
   inputs: inputProps[]
-  redirect: {
+  redirect?: {
     textRedirect: string
     linkRedirect: string
   }

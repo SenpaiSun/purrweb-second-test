@@ -78,3 +78,48 @@ export const formInputsRegister = {
     linkRedirect: 'Войти',
   },
 }
+
+export const formInputsAbout = {
+  title: 'Заполните данные о себе',
+  inputs: [
+    {
+      label: 'Имя',
+      storeItem: 'firtName',
+      placeholder: 'Введите имя',
+      type: 'text',
+      validationRules: {
+        required: 'Поле "Имя" обязательно для заполнения',
+        minLength: {
+          value: 2,
+          message: 'Минимальная длина имени 2 символа',
+        },
+      },
+    },
+    {
+      label: 'Фамилия',
+      storeItem: 'lastName',
+      placeholder: 'Введите фамилию',
+      type: 'text',
+      validationRules: {
+        required: 'Поле "Фамилия" обязательно для заполнения',
+        minLength: {
+          value: 2,
+          message: 'Минимальная длина фамилии 2 символа',
+        },
+      },
+    },
+    {
+      label: 'Телефон',
+      storeItem: 'phone',
+      placeholder: '+7 (333)-333-33-33',
+      type: 'tel',
+      validationRules: {
+        required: 'Поле "Телефон" обязательно для заполнения',
+        pattern: {
+          value: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im,
+          message: 'Некорректный номер телефона',
+        },
+      },
+    },
+  ],
+}

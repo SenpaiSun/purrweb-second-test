@@ -19,14 +19,12 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
   })
 
   const redirect = () => {
-    if (formData.redirect.linkRedirect === 'Зарегистрироваться') {
+    if (formData?.redirect?.linkRedirect === 'Зарегистрироваться') {
       navigate('/sign-up')
     } else {
       navigate('/sign-in')
     }
   }
-
-
 
   const hasErrors = Object.keys(errors).length > 0
   const firstErrorMessage = Object.values(errors)[0]?.message
@@ -65,9 +63,9 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
           </div>
           <Button textButton='Продолжить' type='submit' disabled={checkButtonState()} />
           <div className='auth__redirect-container'>
-            <p className='auth__redirect-text'>{formData.redirect.textRedirect}</p>
+            <p className='auth__redirect-text'>{formData?.redirect?.textRedirect}</p>
             <button type='button' className='auth__redirect-link' onClick={redirect}>
-              {formData.redirect.linkRedirect}
+              {formData?.redirect?.linkRedirect}
             </button>
           </div>
         </div>
