@@ -55,6 +55,7 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
                   placeholder={input.placeholder}
                   type={input.type}
                   register={register}
+                  errors={errors}
                   validationRules={input.label === 'Повтор пароля' ? { ...input.validationRules, validate: (value) => (value === watch('Пароль') ? true : 'Пароли не совпадают') } : input.validationRules}
                 />
               ))}

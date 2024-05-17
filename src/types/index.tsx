@@ -6,6 +6,7 @@ export interface inputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   type: string
   register: UseFormRegister<any>;
   validationRules: RegisterOptions;
+  errors: any
 }
 
 export interface formProps extends React.FormHTMLAttributes<HTMLFormElement> {
