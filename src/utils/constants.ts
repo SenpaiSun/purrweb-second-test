@@ -3,6 +3,7 @@ export const formInputsAuth = {
   inputs: [
     {
       label: 'Электронная почта',
+      storeItem: 'email',
       placeholder: 'example@mail.ru',
       type: 'email',
       validationRules: {
@@ -15,6 +16,7 @@ export const formInputsAuth = {
     },
     {
       label: 'Пароль',
+      storeItem: 'password',
       placeholder: 'Введите 8 значный пароль',
       type: 'password',
       validationRules: {
@@ -37,6 +39,7 @@ export const formInputsRegister = {
   inputs: [
     {
       label: 'Электронная почта',
+      storeItem: 'email',
       placeholder: 'example@mail.ru',
       type: 'email',
       validationRules: {
@@ -49,6 +52,7 @@ export const formInputsRegister = {
     },
     {
       label: 'Пароль',
+      storeItem: 'password',
       placeholder: 'Введите пароль',
       type: 'password',
       validationRules: {
@@ -61,6 +65,7 @@ export const formInputsRegister = {
     },
     {
       label: 'Повтор пароля',
+      storeItem: 'confirmPassword',
       placeholder: 'Повторите пароль',
       type: 'password',
       validationRules: {
