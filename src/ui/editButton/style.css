@@ -2,12 +2,15 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #0024A4;
+  color: #466EFA;
   background-color: transparent;
   border: none;
   cursor: pointer;
   background-image: url('../../assets/icons/edit_button.svg');
   background-repeat: no-repeat;
-  background-position: left center;
-  padding-left: 24px;
+  background-position: 6px center;
+  background-size: 16px;
+  padding-left: 30px;
+  margin-top: 4px;
+  font-family: "Gilroy";
 }

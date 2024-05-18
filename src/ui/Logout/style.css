@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
-  margin-right: 120px;
+  gap: 14px;
+  margin-right: 128px;
 }
 
 .logout__text {

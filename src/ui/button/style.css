@@ -1,8 +1,12 @@
 .button__main {
   width: 100%;
+  max-width: 280px;
   border-radius: 12px;
   height: 52px;
   color: #FFF;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
 }
 
 .button__main:hover {

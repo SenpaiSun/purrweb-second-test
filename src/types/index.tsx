@@ -24,3 +24,7 @@ export interface buttonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   type: 'button' | 'submit' | 'reset'
   disabled: boolean
 }
+
+export interface UserInfoProps {
+  dataUserSort: { [key: string]: string }[];
+}

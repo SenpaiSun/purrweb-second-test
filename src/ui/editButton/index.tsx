@@ -1,5 +1,5 @@
 import './style.css'
 
-export const editButton = ({title}: {title: string}) => {
+export const EditButton = ({title}: {title: string}) => {
   return <button className='edit-button'>{title}</button>
 };

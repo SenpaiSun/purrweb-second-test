@@ -1,0 +1,14 @@
+.my-profile__container-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 36px;
+}
+
+.my-profile__title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  margin: 0;
+}

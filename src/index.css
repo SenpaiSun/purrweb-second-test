@@ -1,3 +1,5 @@
+@import url(./assets/fonts/fonst.css);
+
 :root {
   font-family: 'Gilroy', Arial, sans-serif;
   line-height: 1.5;
@@ -22,6 +24,7 @@ a:hover {
 
 body {
   margin: 0;
+  color: #0B1332;
 }
 
 button {
