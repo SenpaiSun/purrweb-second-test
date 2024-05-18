@@ -9,6 +9,12 @@
   line-height: 20px;
 }
 
+@media screen and (max-width: 578px) {
+  .button__main {
+    max-width: 100%;
+  }
+}
+
 .button__main:hover {
   cursor: pointer;
   background-color: #113ACA;

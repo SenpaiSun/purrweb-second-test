@@ -3,11 +3,12 @@ import { Input } from '../../ui/input'
 import { formProps } from '../../types'
 import './style.css'
 import { Button } from '../../ui/button'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 export const AuthForm = ({ formData }: { formData: formProps }) => {
   const navigate = useNavigate()
+  const location = useLocation()
 
   const {
     register,
@@ -29,10 +30,10 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
   const hasErrors = Object.keys(errors).length > 0
   const firstErrorMessage = Object.values(errors)[0]?.message
   const checkButtonState = () => {
-    if(formData.title === 'Регистрация') {
+    if (formData.title === 'Регистрация') {
       return hasErrors || !watch('Электронная почта') || !watch('Пароль') || !watch('Повтор пароля')
     }
-    if(formData.title === 'Авторизация') {
+    if (formData.title === 'Авторизация') {
       return hasErrors || !watch('Электронная почта') || !watch('Пароль')
     }
     return true
@@ -62,12 +63,16 @@ export const AuthForm = ({ formData }: { formData: formProps }) => {
             <div className='auth__error'>{hasErrors && <p className='auth__error-text'>{firstErrorMessage as string}</p>}</div>
           </div>
           <Button textButton='Продолжить' type='submit' disabled={checkButtonState()} />
-          <div className='auth__redirect-container'>
-            <p className='auth__redirect-text'>{formData?.redirect?.textRedirect}</p>
-            <button type='button' className='auth__redirect-link' onClick={redirect}>
-              {formData?.redirect?.linkRedirect}
-            </button>
-          </div>
+          {location.pathname === '/about-me' ? (
+            <div className='auth__plug'></div>
+          ) : (
+            <div className='auth__redirect-container'>
+              <p className='auth__redirect-text'>{formData?.redirect?.textRedirect}</p>
+              <button type='button' className='auth__redirect-link' onClick={redirect}>
+                {formData?.redirect?.linkRedirect}
+              </button>
+            </div>
+          )}
         </div>
       </form>
     </div>

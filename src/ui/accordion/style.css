@@ -13,26 +13,15 @@
   gap: 24px;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 578px) {
   .profile__container-faq-item {
-    background-position:  96.5% 31px;
-  }
-}
-
-@media screen and (max-width: 475px) {
-  .profile__container-faq-item {
-    background-position:  93% 44px;
+    background-position: top 40px right 24px;
   }
 }
 
 .profile__container-faq-item-active {
   background-image: url(../../assets/icons/accordion_open.svg);
-}
-
-@media screen and (max-width: 475px) {
-  .profile__container-faq-item-active {
-    background-position:  93% 28px;
-  }
+  background-position: top 24px right 24px;
 }
 
 .profile__faq-title {

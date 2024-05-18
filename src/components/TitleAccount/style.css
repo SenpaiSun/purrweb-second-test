@@ -6,6 +6,13 @@
   margin-bottom: 36px;
 }
 
+@media screen and (max-width: 578px) {
+  .my-profile__container-info {
+    margin-bottom: 30px;
+    gap: 16px;
+  }
+}
+
 .my-profile__title {
   font-weight: 600;
   font-size: 36px;

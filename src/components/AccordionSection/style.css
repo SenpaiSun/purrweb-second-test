@@ -4,6 +4,12 @@
   gap: 35px;
 }
 
+@media screen and (max-width: 578px) {
+  .profile__container-faq-section {
+    gap: 28px;
+  }
+}
+
 .profile__faq-title-main {
   font-weight: 600;
   font-size: 24px;
