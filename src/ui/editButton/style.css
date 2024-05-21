@@ -6,13 +6,43 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  background-image: url('../../assets/icons/edit_button.svg');
-  background-repeat: no-repeat;
-  background-position: 6px center;
-  background-size: 16px;
+  position: relative;
   padding-left: 30px;
   margin-top: 4px;
   font-family: "Gilroy";
+}
+
+.edit-button::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #466EFA;
+  mask-image: url('../../assets/icons/edit_button.svg');
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover::before {
+  background-color: #113ACA;
+}
+
+.edit-button:hover {
+  transition: color 0.3s ease;
+  color: #113ACA;
+}
+
+.edit-button:focus {
+  border-radius: 16px;
+  background-color: #F2F3F4;
+  outline: none;
+  height: 30px;
+  padding-right: 12px;
 }
 
 @media screen and (max-width: 578px) {

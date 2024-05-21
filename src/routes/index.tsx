@@ -10,7 +10,7 @@ const router = createBrowserRouter(
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/about-me' element={<AboutMe />} />
-      <Route path='/my-profile' element={<MyProfile />} />
+      <Route path='/' element={<MyProfile />} />
     </Route>
   ),
   {

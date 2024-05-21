@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
   margin-right: 128px;
 }
 
@@ -30,14 +30,45 @@
   font-size: 14px;
   line-height: 20px;
   color: #466EFA;
-  padding: 6px;
-  padding-right: 24px;
+  padding: 6px 24px 6px 13px;
   background-color: transparent;
   text-align: center;
-  background-image: url('../../assets/icons/exit.svg');
   background-repeat: no-repeat;
   background-position: right center;
   width: max-content;
   border: none;
   cursor: pointer;
+  position: relative;
+}
+
+.logout__button::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #466EFA;
+  mask-image: url('../../assets/icons/exit.svg');
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  position: absolute;
+  left: 62px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.logout__button:hover::after {
+  background-color: #113ACA;
+}
+
+.logout__button:hover {
+  color: #113ACA;
+  transition: color 0.3s ease;
+}
+
+.logout__button:focus  {
+  color: #113ACA;
+  border-radius: 16px;
+  background-color: #F2F3F4;
+  outline: none;
 }
