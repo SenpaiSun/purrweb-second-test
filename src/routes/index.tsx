@@ -3,6 +3,7 @@ import { Layout } from '../components/layout'
 import { SignIn, SignUp } from '../pages'
 import AboutMe from '../pages/AboutMe/AboutMe'
 import { MyProfile } from '../pages/MyProfile/MyProfile'
+import ProtectedRoute from '../hooks/ProtectedRoute'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -1,14 +1,17 @@
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { setEmail, setPassword, setConfirmPassword, setFirstName, setLastName, setPhone } from '../store/auth/auth.slice'
+import { setEmail, setPassword, setConfirmPassword, setName, setSurname, setPhone, clearState, setUserInfo, setIsAuth } from '../store/auth/auth.slice'
 
 const actions = {
   setEmail,
   setPassword,
   setConfirmPassword,
-  setFirstName,
-  setLastName,
-  setPhone
+  setName,
+  setSurname,
+  setPhone,
+  clearState,
+  setUserInfo,
+  setIsAuth
 }
 
 export const useActions = () => {

@@ -113,3 +113,22 @@
 .auth__plug {
   margin-bottom: 12px;
 }
+
+.auth__back-button {
+  position: absolute;
+  left: 140px;
+  top: 160px;
+  height: 32px;
+  width: 32px;
+  background-color: transparent;
+  font-family: 'Gilroy';
+  font-size: 14px;
+  line-height: 20px;
+  color: #6F7488;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../assets/icons/button_back.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 20px;
+}

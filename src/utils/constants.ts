@@ -84,7 +84,7 @@ export const formInputsAbout = {
   inputs: [
     {
       label: 'Имя',
-      storeItem: 'firtName',
+      storeItem: 'name',
       placeholder: 'Введите имя',
       type: 'text',
       validationRules: {
@@ -97,7 +97,7 @@ export const formInputsAbout = {
     },
     {
       label: 'Фамилия',
-      storeItem: 'lastName',
+      storeItem: 'surname',
       placeholder: 'Введите фамилию',
       type: 'text',
       validationRules: {

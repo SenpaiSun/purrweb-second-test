@@ -1,12 +1,12 @@
-import { RegisterOptions, UseFormRegister } from "react-hook-form";
+import { RegisterOptions, UseFormRegister } from 'react-hook-form'
 
 export interface inputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   storeItem: string
   placeholder: string
   type: string
-  register?: UseFormRegister<any>;
-  validationRules?: RegisterOptions;
+  register?: UseFormRegister<any>
+  validationRules?: RegisterOptions
   errors?: any
 }
 
@@ -23,8 +23,16 @@ export interface buttonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   textButton: string
   type: 'button' | 'submit' | 'reset'
   disabled: boolean
+  fnc?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export interface UserInfoProps {
-  dataUserSort: { [key: string]: string }[];
+  dataUserSort: { [key: string]: string }[]
+}
+
+export interface DecodedToken {
+  userId: string
+  email: string
+  iat: number
+  exp: number
 }
