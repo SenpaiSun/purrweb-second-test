@@ -1,0 +1,33 @@
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+@media screen and (max-width: 578px) {
+  .info-item:first-child {
+    margin-right: 54px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .info-item:last-child {
+    margin-left: 16px;
+  }
+}
+
+.info-item__title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666666;
+  margin: 0;
+}
+
+.info-item__info {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0B1332;
+  margin: 0;
+}

@@ -1,0 +1,82 @@
+.profile__container-faq-item {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 12px 26px 0px #E8E9EC91;
+  list-style: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 16px;
+  background-image: url(../../assets/icons/accordion_close.svg);
+  background-repeat: no-repeat;
+  background-position: top 28px right 24px;
+  padding: 24px;
+  gap: 24px;
+}
+
+@media screen and (max-width: 578px) {
+  .profile__container-faq-item {
+    background-position: top 40px right 24px;
+  }
+}
+
+.profile__container-faq-item-active {
+  background-image: url(../../assets/icons/accordion_open.svg);
+  background-position: top 24px right 24px;
+}
+
+.profile__faq-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__faq-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 250px;
+  }
+}
+
+.profile__faq-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.41;
+  max-width: 62%;
+  display: none;
+  margin: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .profile__faq-text {
+    max-width: 460px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile__faq-text {
+    max-width: 285px;
+  }
+}
+
+
+.profile__faq-text-active{
+  display: block;
+}
+
+.profile__faq-title-main {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 36px;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__faq-title-main {
+    margin-bottom: 29px;
+  }
+
+}

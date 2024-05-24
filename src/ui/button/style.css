@@ -1,0 +1,29 @@
+.button__main {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  height: 52px;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 578px) {
+  .button__main {
+    max-width: 100%;
+  }
+}
+
+.button__main:hover {
+  cursor: pointer;
+  background-color: #113ACA;
+}
+
+.button__main:focus {
+  outline: 5px solid #F2F3F4
+}
+
+.button__main:disabled {
+  background-color: #E5EBFF;
+}

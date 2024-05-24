@@ -1,0 +1,168 @@
+.auth__container {
+  width: 100%;
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 424px;
+  width: 100%;
+  margin: auto;
+  margin-top: 78px;
+  padding-top: 80px;
+  border-radius: 24px;
+  box-shadow: 0px 12px 26px 0px #e8e9ec91;
+}
+
+@media screen and (max-width: 578px) {
+  .auth__form {
+    padding-top: 58px;
+    margin-top: 40px;
+    width: 92%;
+  }
+}
+
+.auth__data {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 280px;
+  width: 100%;
+}
+
+.auth__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 280px;
+  width: 100%;
+}
+
+.auth__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  margin: auto;
+  color: #0b1332;
+}
+
+.auth__redirect-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #0b1332;
+  margin-bottom: 60px;
+  margin-top: -19px;
+}
+
+.auth__redirect-text {
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.auth__redirect-link {
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  color: #466EFA;
+  background-color: transparent;
+  text-align: center;
+  width: max-content;
+  padding-left: 6px;
+  padding-right: 6px;
+  height: 32px;
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+  margin-left: 8px;
+  margin-right: 9px;
+}
+
+.auth__redirect-link:hover {
+  color: #113ACA;
+}
+
+.auth__redirect-link:focus {
+  border-radius: 16px;
+  background-color: #F2F3F4;
+  outline: none;
+}
+
+.auth__error {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #F46666;
+  margin: 0;
+}
+
+.auth__error-text {
+  margin: 4px 0 0;
+}
+
+.auth__plug {
+  margin-bottom: 12px;
+}
+
+.auth__back-button-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  position: absolute;
+  top: 160px;
+}
+
+@media screen and (max-width: 1024px) {
+  .auth__back-button-container {
+    top: 80px;
+  }
+}
+
+.auth__back-button {
+  position: absolute;
+  left: 140px;
+  top: 0px;
+  height: 32px;
+  width: 32px;
+  background-color: transparent;
+  font-family: 'Gilroy';
+  font-size: 14px;
+  line-height: 20px;
+  color: #6F7488;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../assets/icons/button_back.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .auth__back-button {
+    left: 140px;
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth__back-button {
+    left: 40px;
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .auth__back-button {
+    left: 15px;
+    top: 5px;
+  }
+}

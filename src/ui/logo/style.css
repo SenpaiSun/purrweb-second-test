@@ -1,0 +1,41 @@
+.logo__container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-left: 120px;
+  padding-right: 120px;
+  margin-top: 25px;
+  margin-bottom: 26px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo__container {
+    padding-left: 32px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .logo__container {
+    margin-top: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.logo__image {
+  width: 24px;
+}
+
+.logo__title {
+  color:black;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  margin: 0;
+}
+
+@media screen and (max-width: 578px) {
+  .logo__title {
+    display: none;
+  }
+}
