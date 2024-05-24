@@ -8,7 +8,7 @@ import errorInput from '../../assets/icons/error_input.svg'
 import { Auth } from '../../store/types'
 
 export const Input = (props: inputProps) => {
-  const { label, placeholder, type, register, validationRules, errors, storeItem } = props
+  const { label, placeholder, type, register, validationRules, errors, storeItem, serverError } = props
   const [stateInput, setStateInput] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const { setEmail, setPassword, setConfirmPassword, setName, setSurname, setPhone } = useActions()
@@ -20,12 +20,20 @@ export const Input = (props: inputProps) => {
   }, [hasErrors])
 
   const inputBody = () => {
+    if (serverError) {
+      return (
+        <>
+          <img className='input__image' src={errorInput} />
+          {(label === 'Пароль' || label === 'Повтор пароля') && <button onClick={() => setShowPassword(!showPassword)} type='button' className={showPassword ? 'input__button input__button-open' : 'input__button'} />}
+        </>
+      )
+    }
     if (type === 'email' && stateAuth.email !== '') {
       return <img className='input__image' src={stateInput ? errorInput : accessInput} />
     } else if (label === 'Пароль' || label === 'Повтор пароля') {
       return (
         <>
-          {(label === 'Пароль' ? (stateAuth.password !== '') : (stateAuth.confirmPassword !== '')) &&<button onClick={() => setShowPassword(!showPassword)} type='button' className={showPassword ? 'input__button input__button-open' : 'input__button'} />}
+          {(label === 'Пароль' ? stateAuth.password !== '' : stateAuth.confirmPassword !== '') && <button onClick={() => setShowPassword(!showPassword)} type='button' className={showPassword ? 'input__button input__button-open' : 'input__button'} />}
           {(label === 'Пароль' && stateAuth.password !== '') || (label === 'Повтор пароля' && stateAuth.confirmPassword !== '') ? <img className='input__image' src={stateInput ? errorInput : accessInput} /> : null}
         </>
       )

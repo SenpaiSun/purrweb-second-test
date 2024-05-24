@@ -9,6 +9,7 @@ export interface inputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   validationRules?: RegisterOptions
   errors?: any
   storeItem: keyof Auth;
+  serverError?: string
 }
 
 export interface formProps extends React.FormHTMLAttributes<HTMLFormElement> {

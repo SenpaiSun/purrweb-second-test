@@ -7,7 +7,6 @@ type ProtectedRouteProps = {
 }
 
 const ProtectedRoute = ({ element: Element, path }: ProtectedRouteProps) => {
-  console.log(path)
   const userId = localStorage.getItem('userId')
 
   if (!userId && path !== '/sign-in' && path !== '/sign-up' && path !== '/about-me') {

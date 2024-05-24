@@ -6,12 +6,11 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { useAppSelector } from '../../hooks/redux'
 import { useActions } from '../../hooks/actions'
-export const AuthForm = ({ formData, handler }: { formData: formProps; handler?: SubmitHandler<FieldValues> }) => {
+export const AuthForm = ({ formData, handler, serverError }: { formData: formProps; handler?: SubmitHandler<FieldValues>; serverError?: string }) => {
   const navigate = useNavigate()
   const location = useLocation()
   const formDataStore = useAppSelector((state) => state.auth)
   const { clearState } = useActions()
-
   const {
     register,
     formState: { errors },
@@ -20,6 +19,8 @@ export const AuthForm = ({ formData, handler }: { formData: formProps; handler?:
   } = useForm({
     mode: 'onBlur',
   })
+  const hasErrors = Object.keys(errors).length > 0
+  const firstErrorMessage = Object.values(errors)[0]?.message
 
   const redirect = () => {
     if (formData?.redirect?.linkRedirect === 'Зарегистрироваться') {
@@ -30,8 +31,6 @@ export const AuthForm = ({ formData, handler }: { formData: formProps; handler?:
     clearState()
   }
 
-  const hasErrors = Object.keys(errors).length > 0
-  const firstErrorMessage = Object.values(errors)[0]?.message
 
   const checkButtonState = () => {
     switch (location.pathname) {
@@ -56,6 +55,8 @@ export const AuthForm = ({ formData, handler }: { formData: formProps; handler?:
     return true
   }
 
+  console.log(serverError)
+
   return (
     <div className='auth__container'>
       <form className='auth__form' onSubmit={handleSubmit(handler ? handler : () => {})}>
@@ -71,12 +72,13 @@ export const AuthForm = ({ formData, handler }: { formData: formProps; handler?:
                   type={input.type}
                   register={register}
                   errors={errors}
+                  serverError={serverError}
                   storeItem={input.storeItem}
                   validationRules={input.label === 'Повтор пароля' ? { ...input.validationRules, validate: (value) => (value === watch('Пароль') ? true : 'Пароли не совпадают') } : input.validationRules}
                 />
               ))}
             </div>
-            <div className='auth__error'>{hasErrors && <p className='auth__error-text'>{firstErrorMessage as string}</p>}</div>
+            <div className='auth__error'>{<p className='auth__error-text'>{serverError ? serverError : firstErrorMessage as string}</p>}</div>
           </div>
           <Button fnc={location.pathname === '/sign-up' ? () => navigate('/about-me') : undefined} textButton='Продолжить' type='submit' disabled={checkButtonState()} />
           {location.pathname === '/about-me' ? (

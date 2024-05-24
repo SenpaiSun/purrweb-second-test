@@ -10,7 +10,8 @@ export const registerApi = async (email: string, password: string, name: string,
     const res = await axios.post('/auth/register', { email: email, password: password, name: name, surname: surname, phone: phone })
     return res.data
   } catch (error) {
-    return error
+    console.error(error);
+    throw error;
   }
 }
 
@@ -19,7 +20,8 @@ export const loginApi = async (email: string, password: string) => {
     const res = await axios.post('/auth/login', { email: email, password: password })
     return res.data
   } catch (error) {
-    return error
+    console.error(error);
+    throw error;
   }
 }
 
