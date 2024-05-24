@@ -9,7 +9,7 @@ import { useActions } from '../../hooks/actions'
 import { useAppSelector } from '../../hooks/redux'
 import { useNavigate } from 'react-router-dom'
 
-export const MyProfile: React.FC = () => {
+export default function MyProfile() {
   const userId = localStorage.getItem('userId')
   const {setUserInfo, setIsAuth} = useActions()
   const dataUser = useAppSelector((state) => state.auth)

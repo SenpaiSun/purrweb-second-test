@@ -1,9 +1,11 @@
+import { Auth } from "../store/types"
+
 export const formInputsAuth = {
   title: 'Авторизация',
   inputs: [
     {
       label: 'Электронная почта',
-      storeItem: 'email',
+      storeItem: 'email' as keyof Auth,
       placeholder: 'example@mail.ru',
       type: 'email',
       validationRules: {
@@ -16,7 +18,7 @@ export const formInputsAuth = {
     },
     {
       label: 'Пароль',
-      storeItem: 'password',
+      storeItem: 'password' as keyof Auth,
       placeholder: 'Введите 8 значный пароль',
       type: 'password',
       validationRules: {
@@ -39,7 +41,7 @@ export const formInputsRegister = {
   inputs: [
     {
       label: 'Электронная почта',
-      storeItem: 'email',
+      storeItem: 'email' as keyof Auth,
       placeholder: 'example@mail.ru',
       type: 'email',
       validationRules: {
@@ -52,7 +54,7 @@ export const formInputsRegister = {
     },
     {
       label: 'Пароль',
-      storeItem: 'password',
+      storeItem: 'password' as keyof Auth,
       placeholder: 'Введите пароль',
       type: 'password',
       validationRules: {
@@ -65,7 +67,7 @@ export const formInputsRegister = {
     },
     {
       label: 'Повтор пароля',
-      storeItem: 'confirmPassword',
+      storeItem: 'confirmPassword' as keyof Auth,
       placeholder: 'Повторите пароль',
       type: 'password',
       validationRules: {
@@ -84,7 +86,7 @@ export const formInputsAbout = {
   inputs: [
     {
       label: 'Имя',
-      storeItem: 'name',
+      storeItem: 'name' as keyof Auth,
       placeholder: 'Введите имя',
       type: 'text',
       validationRules: {
@@ -97,7 +99,7 @@ export const formInputsAbout = {
     },
     {
       label: 'Фамилия',
-      storeItem: 'surname',
+      storeItem: 'surname' as keyof Auth,
       placeholder: 'Введите фамилию',
       type: 'text',
       validationRules: {
@@ -110,7 +112,7 @@ export const formInputsAbout = {
     },
     {
       label: 'Телефон',
-      storeItem: 'phone',
+      storeItem: 'phone' as keyof Auth,
       placeholder: '+7 (333)-333-33-33',
       type: 'tel',
       validationRules: {

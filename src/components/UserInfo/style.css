@@ -1,7 +1,6 @@
 .user-info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
   gap: 60px
 }
 
@@ -19,6 +18,7 @@
 
 @media screen and (max-width: 578px) {
   .user-info {
+    grid-template-columns: repeat(2, max-content);
     gap: 24px
   }
 }

@@ -20,7 +20,6 @@
 @media screen and (max-width: 578px) {
   .auth__form {
     padding-top: 58px;
-    padding-bottom: 62px;
     margin-top: 40px;
     width: 92%;
   }
@@ -114,10 +113,24 @@
   margin-bottom: 12px;
 }
 
+.auth__back-button-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  position: absolute;
+  top: 160px;
+}
+
+@media screen and (max-width: 1024px) {
+  .auth__back-button-container {
+    top: 80px;
+  }
+}
+
 .auth__back-button {
   position: absolute;
   left: 140px;
-  top: 160px;
+  top: 0px;
   height: 32px;
   width: 32px;
   background-color: transparent;
@@ -131,4 +144,25 @@
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .auth__back-button {
+    left: 140px;
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth__back-button {
+    left: 40px;
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .auth__back-button {
+    left: 15px;
+    top: 5px;
+  }
 }

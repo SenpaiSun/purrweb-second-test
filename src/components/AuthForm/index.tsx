@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { useAppSelector } from '../../hooks/redux'
 import { useActions } from '../../hooks/actions'
-export const AuthForm = ({ formData, handler }: { formData: formProps, handler?: SubmitHandler<FieldValues> }) => {
+export const AuthForm = ({ formData, handler }: { formData: formProps; handler?: SubmitHandler<FieldValues> }) => {
   const navigate = useNavigate()
   const location = useLocation()
   const formDataStore = useAppSelector((state) => state.auth)
@@ -32,6 +32,7 @@ export const AuthForm = ({ formData, handler }: { formData: formProps, handler?:
 
   const hasErrors = Object.keys(errors).length > 0
   const firstErrorMessage = Object.values(errors)[0]?.message
+
   const checkButtonState = () => {
     switch (location.pathname) {
       case '/sign-up':
@@ -91,9 +92,11 @@ export const AuthForm = ({ formData, handler }: { formData: formProps, handler?:
         </div>
       </form>
       {location.pathname === '/about-me' && (
-        <button onClick={() => navigate(-1)} className='auth__back-button'>
-          Назад
-        </button>
+        <div className='auth__back-button-container'>
+          <button onClick={() => navigate(-1)} className='auth__back-button'>
+            Назад
+          </button>
+        </div>
       )}
     </div>
   )

@@ -1,13 +1,14 @@
 import { RegisterOptions, UseFormRegister } from 'react-hook-form'
+import { Auth } from '../store/types'
 
 export interface inputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
-  storeItem: string
   placeholder: string
   type: string
   register?: UseFormRegister<any>
   validationRules?: RegisterOptions
   errors?: any
+  storeItem: keyof Auth;
 }
 
 export interface formProps extends React.FormHTMLAttributes<HTMLFormElement> {

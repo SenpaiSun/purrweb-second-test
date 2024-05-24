@@ -13,7 +13,7 @@ export default function SignIn() {
       registerApi(formDataStore.email, formDataStore.password, formDataStore.name, formDataStore.surname, formDataStore.phone)
       .then((res: registerProps) => {
         if (res.id) {
-          localStorage.setItem('id', res.id)
+          localStorage.setItem('userId', res.id)
           navigate('/')
         }
       })
