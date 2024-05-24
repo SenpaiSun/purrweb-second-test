@@ -7,7 +7,7 @@ Cтраница авторизации/регистрации и страниц�
 ![image](https://github.com/SenpaiSun/purrweb-test-second/assets/100027896/030a049a-338a-4ff1-bd9c-7bd15daf9784)
 
 ## Технологии, которые применялись в проекте:
-HTML5, CSS3, TypeScipt, React, redux-toolkit, react-hook-form, axios, БЭМ методология, адаптивная верстка.
+HTML5, CSS3, TypeScipt, React, redux-toolkit, react-hook-form, axios, адаптивная верстка.
 
 ## Установка:
 
